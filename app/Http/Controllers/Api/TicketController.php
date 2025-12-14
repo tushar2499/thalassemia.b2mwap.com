@@ -41,4 +41,14 @@ class TicketController extends Controller
             return response()->json(['message' => 'An error occurred', 'error' => $e->getMessage()], 500);
         }
     }
+
+
+    public function callbackTicket(Request $request)
+    {
+        // Log the incoming request for debugging
+        \Log::info('Callback received:', $request->all());
+
+
+        return response()->json(['status' => 'Callback received']);
+    }
 }
