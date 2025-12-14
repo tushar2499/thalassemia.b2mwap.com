@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('tickets', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('ticket_series_id')->nullable();
             $table->string('ticket_no')->unique();
-            $table->bigInteger('reference_no')->nullable();
+            $table->bigInteger('reference_no')->nullable()->comment('Payment table _id as reference');
             $table->tinyInteger('sold_status')->default(0)->comment('1=sold, 0=unsold');
             $table->dateTime('sold_date')->nullable();
             $table->unsignedBigInteger('created_by')->nullable();

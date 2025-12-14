@@ -15,6 +15,7 @@ class Ticket extends Model
      * @var array<int, string>
      */
     protected $fillable = [
+        'ticket_series_id',
         'ticket_no',
         'reference_no',
         'sold_status',
